@@ -117,5 +117,6 @@ void main() {
     // Call `redAlliance.reset()`, then print `redAlliance.getScore()` again.
     // It should now print `0`, even though `redAlliance` never had any
     // penalties applied after its last penalty above.
-
+    redAlliance.reset();
+    System.out.println(redAlliance.getScore());
 }
