@@ -10,7 +10,7 @@
 // Lastly, below the definitions of the `x` and `y` fields, define a static final
 // field `ORIGIN`, of type `Point`, and assign to it a new `Point` instance
 // with x = 0 and y = 0.
-public class Point { 
+public static class Point { 
     private final double x;
     private final double y;
 
@@ -28,7 +28,6 @@ public class Point {
         return this.y;
     }
 }
-public class jamal {
 void main() {
     // Create two `Point` objects: one representing the point (2, 5) and stored
     // in the variable `pointOne`, and the other representing the point (3, 0)
@@ -93,4 +92,4 @@ void main() {
         System.out.println("p1 does not equal p2");
     }
 }
-}
+

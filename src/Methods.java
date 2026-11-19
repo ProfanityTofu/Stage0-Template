@@ -3,8 +3,7 @@
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
-
-class ScoreKeeper {
+public class ScoreKeeper {
     // A ScoreKeeper tracks an alliance's score during a match, so its score
     // needs to be able to change over time. Declare a `private int` field
     // named `score` below (don't initialize it here, the constructors will
@@ -14,20 +13,20 @@ class ScoreKeeper {
     // A team's score can never drop below zero. Declare a
     // constant named `MIN_SCORE`, equal to `0`, to represent
     // that floor.
-    final int MIN_SCORE = 0; 
+    final int MIN_SCORE = 0;    
 
     // Write a no-argument constructor `ScoreKeeper()` that starts the score
     // at `MIN_SCORE`. Instead of repeating the constructor logic, use
     // `this(...)` to call the other constructor below, passing `MIN_SCORE`
     // as the argument.
     public ScoreKeeper() { 
-        this(MIN_SCORE);
+        score = MIN_SCORE;
     }
 
     // Write a constructor `ScoreKeeper(int startingScore)` that sets `score`
     // to `startingScore`.
     public ScoreKeeper(int startingScore) { 
-        startingScore = score;
+        score = startingScore;
     }
 
     // Write a method `addPoints(int points)` that adds `points` to `score`,
@@ -58,8 +57,7 @@ class ScoreKeeper {
 
     // Because `score` is private, write a getter method `getScore()` that
     // returns its current value as an `int`.
-    public int getScore() { 
-        this.score = score; 
+    public int getScore() {  
         return this.score;
     }
 
@@ -80,12 +78,10 @@ class ScoreKeeper {
         score = MIN_SCORE;
     }
 }
-
 void main() {
     // Create a ScoreKeeper named `redAlliance` using the no-argument
     // constructor. Its score should start at `0`.
     ScoreKeeper redAlliance = new ScoreKeeper(); 
-        redAlliance.score = 0;
 
     // Call `redAlliance.addPoints(10)`, then `redAlliance.addPoints(46)`.
     // Each call should print the running total, ending with
@@ -108,7 +104,7 @@ void main() {
 
     // Create a second ScoreKeeper named `blueAlliance`, this time using the
     // `ScoreKeeper(int startingScore)` constructor, passing `30`.
-    ScoreKeeper blueAlliance = new ScoreKeeper(30);
+    ScoreKeeper blueAlliance = new ScoreKeeper(-5);
 
     // Print the result of `redAlliance.hasWon(blueAlliance.getScore())`.
     // Since `redAlliance`'s score is currently 0, this should print `false`.
@@ -117,7 +113,6 @@ void main() {
     // here, so a starting score is allowed to be negative if passed in
     // directly through the constructor).
     System.out.println(redAlliance.hasWon(blueAlliance.getScore()));
-    blueAlliance.ScoreKeeper(-5);
 
     // Call `redAlliance.reset()`, then print `redAlliance.getScore()` again.
     // It should now print `0`, even though `redAlliance` never had any
